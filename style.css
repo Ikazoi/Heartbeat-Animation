@@ -1,0 +1,168 @@
+:root {
+    --animSpeed: 0.5s;
+}
+
+body {
+    background-color: #080808;
+    margin: 0px;
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    z-index: 100;
+}
+
+header form {
+    margin: 0px;
+    padding: 30px;
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    color: red;
+    background-color: #151515;
+    border-radius: 0px 0px 50px 50px;
+}
+
+input{
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    color: red;
+    background-color: #1f1f1f;
+    border: 0px;
+    outline: none;
+    text-align: center;
+    width: 100px;
+    -webkit-backface-visibility: hidden;
+	-webkit-transform: scale(1);
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* heart */
+
+.heart{
+    height: 100px;
+    width: 100px;
+    transform: rotate(45deg);
+    background-color: red;
+    animation: heartbeat var(--animSpeed) infinite; 
+}
+
+.heart::after {
+    content: "";
+    position: absolute;
+    bottom: 50px;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border-radius: 100%;
+    animation: heartbeat-after var(--animSpeed) infinite; 
+}
+.heart::before {
+    content: "";
+    position: absolute;
+    right: 50px;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border-radius: 100%;
+    animation: heartbeat-before var(--animSpeed) infinite; 
+}
+
+@keyframes heartbeat {
+    5% {
+        height: 150px;
+        width: 150px;
+    }
+}
+
+@keyframes heartbeat-after {
+    5% {
+        bottom: 75px;
+        height: 150px;
+        width: 150px;
+    }
+}
+
+@keyframes heartbeat-before {
+    5% {
+        right: 75px;
+        height: 150px;
+        width: 150px;
+    }
+}
+
+/* hearts light */
+
+.light{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    transform: rotate(45deg);
+    background-color: white;
+    opacity: 0.9;
+    animation: light-animation var(--animSpeed) infinite; 
+}
+
+.light::after {
+    content: "";
+    position: absolute;
+    bottom: 50px;
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 100%;
+    animation: light-animation-after var(--animSpeed) infinite; 
+}
+
+.light::before {
+    content: "";
+    position: absolute;
+    right: 50px;
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 100%;
+    animation: light-animation-before var(--animSpeed) infinite; 
+}
+
+@keyframes light-animation{
+    50% {
+        height: 250px;
+        width: 250px;
+        opacity: 0;
+    }
+    100% {
+        height: 250px;
+        width: 250px;
+        opacity: 0;
+    }
+}
+
+@keyframes light-animation-after{
+    50% {
+        bottom: 125px;
+        height: 250px;
+        width: 250px;
+    }
+}
+
+@keyframes light-animation-before{
+    50% {
+        right: 125px;
+        height: 250px;
+        width: 250px;
+    }
+}
